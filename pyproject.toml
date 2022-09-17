@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "mozilla local library"
+version = "0.1.0"
+description = "A simple library application made using Django."
+authors = ["Antony Nyagah, <tony.m.nyagah@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+Django = "3.2.15"
+django-environ = "^0.9.0"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^2.20.0"
+commitizen = "^2.33.1"
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "2.1.0"
+version_files = [
+    # "src/__version__.py",
+    "pyproject.toml:version"
+]
+style = [
+    ["qmark", "fg:#ff9d00 bold"],
+    ["question", "bold"],
+    ["answer", "fg:#ff9d00 bold"],
+    ["pointer", "fg:#ff9d00 bold"],
+    ["highlighted", "fg:#ff9d00 bold"],
+    ["selected", "fg:#cc5454"],
+    ["separator", "fg:#cc5454"],
+    ["instruction", ""],
+    ["text", ""],
+    ["disabled", "fg:#858585 italic"]
+]
+changelog_incremental = true
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
