@@ -13,8 +13,12 @@ repos:
     rev: 22.8.0
     hooks:
       - id: black
+  - repo: https://github.com/pycqa/flake8
+    rev: "5.0.4"
+    hooks:
+      - id: flake8
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v2.32.5
+    rev: v2.34.0
     hooks:
       - id: commitizen
       - id: commitizen-branch
