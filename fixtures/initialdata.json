@@ -1,0 +1,202 @@
+[
+  {
+    "model": "catalog.genre",
+    "pk": 1,
+    "fields": { "name": "Science Fiction" }
+  },
+  { "model": "catalog.genre", "pk": 2, "fields": { "name": "Fantasy" } },
+  { "model": "catalog.genre", "pk": 3, "fields": { "name": "Horror" } },
+  {
+    "model": "catalog.genre",
+    "pk": 4,
+    "fields": { "name": "Action and Adventure" }
+  },
+  { "model": "catalog.genre", "pk": 5, "fields": { "name": "Comedy" } },
+  { "model": "catalog.genre", "pk": 6, "fields": { "name": "Mystery" } },
+  { "model": "catalog.genre", "pk": 7, "fields": { "name": "Drama" } },
+  { "model": "catalog.genre", "pk": 8, "fields": { "name": "Non-fiction" } },
+  { "model": "catalog.genre", "pk": 9, "fields": { "name": "Young adult" } },
+  { "model": "catalog.language", "pk": 2, "fields": { "name": "English" } },
+  {
+    "model": "catalog.book",
+    "pk": 1,
+    "fields": {
+      "title": "Mort",
+      "author": 1,
+      "summary": "Death comes to us all. When he came to Mort, he offered him a job.\r\n\r\nAfter being assured that being dead was not compulsory, Mort accepted. However, he soon found that romantic longings did not mix easily with the responsibilities of being Death's apprentice..",
+      "isbn": "0-575-04171-4",
+      "language": 2,
+      "genre": [2]
+    }
+  },
+  {
+    "model": "catalog.book",
+    "pk": 2,
+    "fields": {
+      "title": "A Short History of Nearly Everything",
+      "author": 2,
+      "summary": "Bill Bryson describes himself as a reluctant traveler, but even when he stays safely at home he can't contain his curiosity about the world around him. \"A Short History of Nearly Everything\" is his quest to understand everything that has happened from the Big Bang to the rise of civilization - how we got from there, being nothing at all, to here, being us. The ultimate eye-opening journey through time and space, revealing the world in a way most of us have never seen it before.",
+      "isbn": "0-7679-0817-1",
+      "language": 2,
+      "genre": [8]
+    }
+  },
+  {
+    "model": "catalog.book",
+    "pk": 3,
+    "fields": {
+      "title": "Sourcery",
+      "author": 1,
+      "summary": "There was an eighth son of an eighth son. He was, quite naturally, a wizard. And there it should have ended. However (for reasons we'd better not go into), he had seven sons. And then he had an eighth son... a wizard squared... a source of magic... a Sourcerer.",
+      "isbn": "0-575-04217-6",
+      "language": 2,
+      "genre": [2]
+    }
+  },
+  {
+    "model": "catalog.book",
+    "pk": 4,
+    "fields": {
+      "title": "Small Gods",
+      "author": 1,
+      "summary": "In the beginning was the Word.\r\n\r\nAnd the Word was: \"Hey, you!\"\r\n\r\nFor Brutha the novice is the Chosen One. He wants peace and justice and brotherly love.\r\n\r\nHe also wants the Inquisition to stop torturing him now, please...",
+      "isbn": "0-06-017750-0",
+      "language": 2,
+      "genre": [2]
+    }
+  },
+  {
+    "model": "catalog.book",
+    "pk": 5,
+    "fields": {
+      "title": "Feet of Clay",
+      "author": 1,
+      "summary": "There's a werewolf with pre-lunar tension in Ankh-Morpork, and a dwarf with an attitude and a golem who's begun to think for itself.\r\n\r\nBut for Commander Vimes, Head of Ankh-Morpork City Watch, that's only the start...\r\n\r\nThere's treason in the air.\r\nA crime has happened.\r\n\r\nHe's not only got to find out whodunit, but howdunit too. He's not even sure what they dun. But as soon as he knows what the questions are, he's going to want some answers",
+      "isbn": "0-575-05900-1",
+      "language": 2,
+      "genre": [2]
+    }
+  },
+  {
+    "model": "catalog.book",
+    "pk": 6,
+    "fields": {
+      "title": "Artemis Fowl",
+      "author": 3,
+      "summary": "Twelve-year-old Artemis Fowl is a millionaire, a genius, and above all, a criminal mastermind. But even Artemis doesn't know what he's taken on when he kidnaps a fairy, Captain Holly Short of the LEPrecon Unit. These aren't the fairies of bedtime stories—they're dangerous! Full of unexpected twists and turns, Artemis Fowl is a riveting, magical adventure.",
+      "isbn": "0-670-89962-3",
+      "language": 2,
+      "genre": [2, 9]
+    }
+  },
+  {
+    "model": "catalog.bookinstance",
+    "pk": "03efdf9b-e8f0-4d1f-9234-1616c4fd19fa",
+    "fields": {
+      "book": 1,
+      "imprint": "Harper",
+      "due_back": null,
+      "status": "a"
+    }
+  },
+  {
+    "model": "catalog.bookinstance",
+    "pk": "239614cf-1f37-4897-a8f7-dd958a75762b",
+    "fields": {
+      "book": 2,
+      "imprint": "Doubleday",
+      "due_back": null,
+      "status": "a"
+    }
+  },
+  {
+    "model": "catalog.bookinstance",
+    "pk": "3d91325a-5eb8-459d-b387-6d7ff9cdece3",
+    "fields": {
+      "book": 6,
+      "imprint": "Harper",
+      "due_back": null,
+      "status": "r"
+    }
+  },
+  {
+    "model": "catalog.bookinstance",
+    "pk": "45cc2545-dc75-4b60-bb17-43dbb20b4f46",
+    "fields": {
+      "book": 5,
+      "imprint": "Harper",
+      "due_back": null,
+      "status": "m"
+    }
+  },
+  {
+    "model": "catalog.bookinstance",
+    "pk": "7b86dbe6-a797-402e-bb56-ed51567e2dbd",
+    "fields": {
+      "book": 1,
+      "imprint": "Harper",
+      "due_back": "2022-09-30",
+      "status": "o"
+    }
+  },
+  {
+    "model": "catalog.bookinstance",
+    "pk": "9041d744-0d7f-4fc9-a1ad-5d4b6253eea8",
+    "fields": {
+      "book": 3,
+      "imprint": "Harper",
+      "due_back": "2022-10-06",
+      "status": "o"
+    }
+  },
+  {
+    "model": "catalog.bookinstance",
+    "pk": "ce498b71-f2e8-425e-bcd9-27fa211bdcf3",
+    "fields": {
+      "book": 5,
+      "imprint": "Harper",
+      "due_back": "2022-10-01",
+      "status": "o"
+    }
+  },
+  {
+    "model": "catalog.bookinstance",
+    "pk": "f51289bb-d771-4ff2-b222-40f5bd2ba974",
+    "fields": {
+      "book": 4,
+      "imprint": "Harper",
+      "due_back": "2022-09-21",
+      "status": "o"
+    }
+  },
+  {
+    "model": "catalog.author",
+    "pk": 1,
+    "fields": {
+      "first_name": "Terry",
+      "last_name": "Pratchett",
+      "date_of_birth": "1948-04-28",
+      "date_of_death": "2015-05-12"
+    }
+  },
+  {
+    "model": "catalog.author",
+    "pk": 2,
+    "fields": {
+      "first_name": "Bill",
+      "last_name": "Bryson",
+      "date_of_birth": "1951-12-08",
+      "date_of_death": null
+    }
+  },
+  {
+    "model": "catalog.author",
+    "pk": 3,
+    "fields": {
+      "first_name": "Eoin",
+      "last_name": "Colfer",
+      "date_of_birth": "1965-05-14",
+      "date_of_death": null
+    }
+  }
+]

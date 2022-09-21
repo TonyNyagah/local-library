@@ -1,4 +1,4 @@
-from uuid import uuid5  # Required for unique book instances
+from uuid import uuid4  # Required for unique book instances
 
 from django.db import models
 from django.urls import reverse  # Used to generate URLs by reversing the URL patterns
@@ -59,13 +59,19 @@ class Book(models.Model):
         """Returns the URL to access a detail record for this book."""
         return reverse("book-detail", args=[str(self.id)])
 
+    def display_genre(self):
+        """Create a string for the Genre. This is required to display genre in Admin."""
+        return ", ".join(genre.name for genre in self.genre.all()[:3])
+
+    display_genre.short_description = "Genre"
+
 
 class BookInstance(models.Model):
     """Model representing a specific copy of a book (i.e. that can be borrowed from the library)"""
 
     id = models.UUIDField(
         primary_key=True,
-        default=uuid5,
+        default=uuid4,
         help_text="Unique ID for this particular book across the whole library",
     )
     book = models.ForeignKey("Book", on_delete=models.RESTRICT, null=True)
@@ -92,7 +98,7 @@ class BookInstance(models.Model):
 
     def __str__(self):
         """String for representing the Model object (in Admin site etc.)"""
-        return f"{self.id} ({self.book.title})"
+        return f"{self.book.title} ({self.id})"
 
 
 class Author(models.Model):
