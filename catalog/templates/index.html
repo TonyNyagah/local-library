@@ -16,7 +16,7 @@
     <li><strong>Total copies available:</strong> {{ num_instances }}</li>
     <li><strong>Copies available for borrowing:</strong> {{ num_instances_available }}</li>
   </ul>
-  <p>List of all available books:</p>
+  {% comment %} <p>List of all available books:</p>
   <table summary="All available books">
     <tr>
         <th>Book</th>
@@ -28,5 +28,5 @@
             </tr>
         {% endfor %}
     </tr>
-  </table>
+  </table> {% endcomment %}
 {% endblock %}
