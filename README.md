@@ -13,6 +13,8 @@ Some of the features to try out include:
 - [ ] Containerizing the application with Docker.
 - [ ] CI/CD integration.
 - [ ] Implement recommendations from the `Two Scoops of Django` book after completing the tutorial.
+- [ ] Add Django REST framework or Django Ninja to the project to create an API.
+- [ ] Create a frontend in Vue.
 
 ### The model design
 ![](design%20notes/local_library_model_uml.svg)
