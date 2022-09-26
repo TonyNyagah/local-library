@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -58,7 +59,7 @@ ROOT_URLCONF = "locallibrary.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -130,3 +131,9 @@ STATICFILES_DIRS = [BASE_DIR / STATIC_URL]
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 FIXTURE_DIRS = [BASE_DIR / "fixtures"]
+
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+LOGIN_REDIRECT_URL = "/"
+
+# Fore testing email stuff i.e. resetting
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
