@@ -22,6 +22,9 @@ Some of the features to try out include:
 ### The basic django flow
 ![](design%20notes/basic-django.png)
 
+### Django form handling
+![](design%20notes/form_handling_-_standard.png)
+
 #### Steps to take before committing
 Run the following commands in sequence:
 1. `pre-commit install --hook-type commit-msg --hook-type pre-push`
