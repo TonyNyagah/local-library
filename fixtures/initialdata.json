@@ -16,6 +16,7 @@
   { "model": "catalog.genre", "pk": 7, "fields": { "name": "Drama" } },
   { "model": "catalog.genre", "pk": 8, "fields": { "name": "Non-fiction" } },
   { "model": "catalog.genre", "pk": 9, "fields": { "name": "Young adult" } },
+  { "model": "catalog.genre", "pk": 10, "fields": { "name": "Novel" } },
   { "model": "catalog.language", "pk": 2, "fields": { "name": "English" } },
   {
     "model": "catalog.book",
@@ -90,13 +91,26 @@
     }
   },
   {
+    "model": "catalog.book",
+    "pk": 7,
+    "fields": {
+      "title": "War and Peace",
+      "author": 4,
+      "summary": "In Russia's struggle with Napoleon, Tolstoy saw a tragedy that involved all mankind. Greater than a historical chronicle, War and Peace is an affirmation of life itself, `a complete picture', as a contemporary reviewer put it, `of everything in which people find their happiness and greatness, their grief and humiliation'. Tolstoy gave his personal approval to this translation, published here in a new single volume edition, which includes an introduction by Henry Gifford, and Tolstoy's important essay `Some Words about War and Peace'",
+      "isbn": "9788400079988",
+      "language": 2,
+      "genre": [10]
+    }
+  },
+  {
     "model": "catalog.bookinstance",
     "pk": "03efdf9b-e8f0-4d1f-9234-1616c4fd19fa",
     "fields": {
       "book": 1,
       "imprint": "Harper",
-      "due_back": null,
-      "status": "a"
+      "due_back": "2022-10-19",
+      "borrower": null,
+      "status": "o"
     }
   },
   {
@@ -106,6 +120,7 @@
       "book": 2,
       "imprint": "Doubleday",
       "due_back": null,
+      "borrower": null,
       "status": "a"
     }
   },
@@ -115,8 +130,9 @@
     "fields": {
       "book": 6,
       "imprint": "Harper",
-      "due_back": null,
-      "status": "r"
+      "due_back": "2022-10-19",
+      "borrower": 4,
+      "status": "o"
     }
   },
   {
@@ -125,7 +141,19 @@
     "fields": {
       "book": 5,
       "imprint": "Harper",
-      "due_back": null,
+      "due_back": "2022-10-19",
+      "borrower": 2,
+      "status": "o"
+    }
+  },
+  {
+    "model": "catalog.bookinstance",
+    "pk": "4bb605f6-c81d-4a4a-8aa2-1f40b38939b7",
+    "fields": {
+      "book": 7,
+      "imprint": "Harper Collins",
+      "due_back": "2022-09-23",
+      "borrower": null,
       "status": "m"
     }
   },
@@ -135,7 +163,8 @@
     "fields": {
       "book": 1,
       "imprint": "Harper",
-      "due_back": "2022-09-30",
+      "due_back": "2022-10-19",
+      "borrower": 3,
       "status": "o"
     }
   },
@@ -145,7 +174,8 @@
     "fields": {
       "book": 3,
       "imprint": "Harper",
-      "due_back": "2022-10-06",
+      "due_back": "2022-10-19",
+      "borrower": 3,
       "status": "o"
     }
   },
@@ -155,7 +185,8 @@
     "fields": {
       "book": 5,
       "imprint": "Harper",
-      "due_back": "2022-10-01",
+      "due_back": "2022-10-19",
+      "borrower": null,
       "status": "o"
     }
   },
@@ -165,7 +196,8 @@
     "fields": {
       "book": 4,
       "imprint": "Harper",
-      "due_back": "2022-09-21",
+      "due_back": "2022-10-19",
+      "borrower": 2,
       "status": "o"
     }
   },
@@ -197,6 +229,16 @@
       "last_name": "Colfer",
       "date_of_birth": "1965-05-14",
       "date_of_death": null
+    }
+  },
+  {
+    "model": "catalog.author",
+    "pk": 4,
+    "fields": {
+      "first_name": "Leo",
+      "last_name": "Tolstoy",
+      "date_of_birth": "1828-09-09",
+      "date_of_death": "1910-11-20"
     }
   }
 ]
