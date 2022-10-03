@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mozilla local library"
-version = "0.1.0"
+version = "2.2.0"
 description = "A simple library application made using Django."
 authors = ["Antony Nyagah, <tony.m.nyagah@gmail.com>"]
 readme = "README.md"
