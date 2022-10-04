@@ -31,6 +31,8 @@ class RenewBookForm(forms.Form):
 
 
 class RenewBookModelForm(ModelForm):
+    """Model form for renewing a loaned book's due date."""
+
     def clean_due_back(self):
         data: datetime.datetime = self.cleaned_data["due_back"]
 
