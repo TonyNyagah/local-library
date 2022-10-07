@@ -35,12 +35,12 @@ class AuthorListViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "catalog/author_list.html")
 
-    def test_pagination_is_five(self):
+    def test_pagination_is_ten(self):
         response = self.client.get(reverse("authors"))
         self.assertEqual(response.status_code, 200)
         self.assertTrue("is_paginated" in response.context)
         self.assertTrue(response.context["is_paginated"])
-        self.assertEqual(len(response.context["author_list"]), 5)
+        self.assertEqual(len(response.context["author_list"]), 10)
 
     def test_lists_all_authors(self):
         # Get second page and confirm it has (exactly) remaining 3 items
@@ -48,7 +48,7 @@ class AuthorListViewTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTrue("is_paginated" in response.context)
         self.assertTrue(response.context["is_paginated"])
-        self.assertEqual(len(response.context["author_list"]), 5)
+        self.assertEqual(len(response.context["author_list"]), 3)
 
 
 class LoanedBookInstancesByUserListViewTest(TestCase):
