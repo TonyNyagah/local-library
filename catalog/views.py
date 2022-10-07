@@ -8,8 +8,8 @@ from django.urls import reverse, reverse_lazy
 from django.views import generic
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
-from .forms import RenewBookModelForm
-from .models import Author, Book, BookInstance, Genre
+from catalog.forms import RenewBookModelForm
+from catalog.models import Author, Book, BookInstance, Genre
 
 
 def index(request):
