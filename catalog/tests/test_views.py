@@ -307,6 +307,16 @@ class RenewBookInstanceViewTest(TestCase):
         )
         self.assertRedirects(response, reverse("all-borrowed-books"))
 
+    def test_HTTP404_for_invalid_book_if_logged_in(self):
+        import uuid
+
+        test_uid = uuid.uuid4()  # unlikely UID to match our bookinstance!
+        login = self.client.login(username="testuser2", password="2HJ1vRV0Z&3iD")
+        response = self.client.get(
+            reverse("renew-book-librarian", kwargs={"pk": test_uid})
+        )
+        self.assertEqual(response.status_code, 404)
+
     # def test_form_invalid_renewal_date_past(self):
     #     login = self.client.login(username="testuser2", password="2HJ1vRV0Z&3iD")
     #     date_in_past = datetime.date.today() - datetime.timedelta(weeks=1)
@@ -333,3 +343,30 @@ class RenewBookInstanceViewTest(TestCase):
     #         "due_back",
     #         "Invalid date - renewal more than 4 weeks ahead",
     #     )
+
+
+class AuthorCreateViewTest(TestCase):
+    """Test case for the AuthorCreate view (Created as Challenge)."""
+
+    def setUp(self):
+        # Create a user
+        test_user1 = User.objects.create_user(
+            username="testuser1", password="1X<ISRUkw+tuK"
+        )
+        test_user2 = User.objects.create_user(
+            username="testuser2", password="2HJ1vRV0Z&3iD"
+        )
+
+        test_user1.save()
+        test_user2.save()
+
+        permission = Permission.objects.get(name="Set book as returned")
+        test_user2.user_permissions.add(permission)
+        test_user2.save()
+
+        # Create a book
+        test_author = Author.objects.create(first_name="John", last_name="Swick")
+
+    def test_redirect_if_not_logged_in(self):
+        response = self.client.get(reverse("author-create"))
+        self.assertRedirects(response, "/accounts/login/?next=/catalog/author/create/")
