@@ -140,7 +140,7 @@ testing = ["coverage[toml] (>=5.0a4)", "pytest (>=4.6.11)"]
 name = "django-extensions"
 version = "3.2.1"
 description = "Extensions for Django"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.6"
 
@@ -428,7 +428,7 @@ brotli = ["Brotli"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "5b6d5fbf2628e2d6cf7c55291909a2d06a8a26cc44fe998a28afd00be943224f"
+content-hash = "13e5297c167eac30168a7965f524d465e9775fc7b49374b4058cedead56c7310"
 
 [metadata.files]
 argcomplete = [
