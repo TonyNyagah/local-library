@@ -6,6 +6,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse, reverse_lazy
+from django.views import generic
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 
 from catalog.forms import RenewBookModelForm
@@ -37,9 +38,6 @@ def index(request):
             "num_visits": num_visits,
         },
     )
-
-
-from django.views import generic
 
 
 class BookListView(generic.ListView):
